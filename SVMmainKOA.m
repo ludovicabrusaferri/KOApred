@@ -62,14 +62,14 @@ function variables = extractVariables(data, titles)
         cleanedName = matlab.lang.makeValidName(varName{1});
         variables.(cleanedName) = extract(varName{1});
     end
-    % Assuming genotype is your original array
-    variables.Genotype0 = variables.Genotype_1_GG_ == 1; % This will be 1 (true) where genotype is 0, and 0 (false) otherwise
-    variables.Genotype1 = variables.Genotype_1_GG_ == 2; % This will be 1 (true) where genotype is 1, and 0 (false) otherwise
+    % Assuming genotype is your original arrays
+    variables.Genotype0 = variables.Genotype_1_GG_ == 1; % This will be 0 when genotype is GG
+    variables.Genotype1 = variables.Genotype_1_GG_ == 2; % This will be 1 when genotype is GA
     
     
     % Assuming genotype is your original array
-    variables.Sex0 = variables.Sex_1_F_ == 1; % This will be 1 (true) where genotype is 0, and 0 (false) otherwise
-    variables.Sex1 = variables.Sex_1_F_ == 2; % This will be 1 (true) where genotype is 1, and 0 (false) otherwise
+    variables.Sex0 = variables.Sex_1_F_ == 1; % This will be 0 when sex is F
+    variables.Sex1 = variables.Sex_1_F_ == 2; % This will be 1 when sex is M
 end
 
 
